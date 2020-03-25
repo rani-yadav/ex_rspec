@@ -60,7 +60,7 @@ RSpec.describe Post, type: :model do
 	    expect(page).not_to have_content('Edit post')
 	    expect(page).to have_content('Title')
 	  end
-  	context 'with invalid fields' do
+  	context 'with invalid attributes' do
 	    it 'shows errors' do
 		    visit edit_post_path(post)
 		    fill_in 'Title', with: ''
@@ -71,8 +71,8 @@ RSpec.describe Post, type: :model do
 		    expect(page).to have_content ('body can not be blank')
     	end
   	end
-  context 'with valid fields' do
-    scenario 'updates the post' do
+  	context 'with valid attributes' do
+    it'updates the post' do
       visit edit_post_path(post)
       fill_in 'Title', with: 'good morning'
       click_on 'Update Post'
