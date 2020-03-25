@@ -53,27 +53,24 @@ RSpec.describe Post, type: :model do
 
   describe 'Post' do
 	  before(:each) do
-	   let(:post) { create :post, title: 'hello'}
+	  let(:post) { create :post, title: 'hello'}
 	  end
 		it 'redirects_to edit post path' do
 	    visit edit_post_path(post)
 	    expect(page).not_to have_content('Edit post')
 	    expect(page).to have_content('Title')
 	  end
-	end
-
-  context 'with invalid fields' do
-    it 'shows errors' do
-      visit edit_post_path(post)
-      fill_in 'Title', with: ''
-      click_on 'Update Post'
-      expect(page).to have_content("Title can not be blank")
-      fill_in 'body', with: ''
-      click_on 'Update Post'
-      expect(page).to have_content ('body can not be blank')
-    end
-  end
-
+  	context 'with invalid fields' do
+	    it 'shows errors' do
+		    visit edit_post_path(post)
+		    fill_in 'Title', with: ''
+		    click_on 'Update Post'
+		    expect(page).to have_content("Title can not be blank")
+		    fill_in 'body', with: ''
+		    click_on 'Update Post'
+		    expect(page).to have_content ('body can not be blank')
+    	end
+  	end
   context 'with valid fields' do
     scenario 'updates the post' do
       visit edit_post_path(post)
