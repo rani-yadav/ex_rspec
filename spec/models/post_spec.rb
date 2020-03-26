@@ -9,7 +9,7 @@ RSpec.describe Post, type: :model do
 
 	describe 'create new post' do
 	  it 'with invalid attributes' do
-	    it 'shows errors' do
+	    context 'shows errors' do
 	      visit new_post_path
 	      fill_in 'title', with: Faker::Lorem.paragraph
 	      click_on 'Create Post'
