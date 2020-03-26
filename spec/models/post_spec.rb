@@ -2,8 +2,7 @@ require 'rails_helper'
 require 'spec_helper'
 
 RSpec.describe Post, type: :model do
-
-	it "has a valid factory" do
+	it "has a valid post" do
    expect(FactoryBot.build(:post)).to be_valid
   end
    describe Post do

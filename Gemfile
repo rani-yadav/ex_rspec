@@ -37,8 +37,6 @@ group :development, :test do
   gem 'capybara', '>= 2.15'
   gem 'selenium-webdriver'
   gem 'faker'
-
-
 end
 
 group :development do
