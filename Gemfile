@@ -56,6 +56,7 @@ group :test do
   # Easy installation and use of web drivers to run system tests with browsers
   gem 'webdrivers'
   gem 'shoulda-matchers'
+  gem 'database_cleaner', '~> 1.5'
 end
 
 

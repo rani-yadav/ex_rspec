@@ -94,4 +94,20 @@ RSpec.configure do |config|
   Kernel.srand config.seed
 =end
 require 'capybara/rspec'
+Capybara.register_driver :poltergeist do |app|
+    Capybara::Poltergeist::Driver.new(app)
+  end
+  Capybara.javascript_driver = :poltergeist
+  Capybara.server_port = 5000
+  # config.before(:suite) do
+  #   DatabaseCleaner.clean_with :truncation
+  # end
+  config.before(:each) do
+    DatabaseCleaner.strategy = :transaction
+    DatabaseCleaner.start
+  end
+
+  config.after(:each) do
+    DatabaseCleaner.clean
+  end
 end
