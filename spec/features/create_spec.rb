@@ -1,7 +1,4 @@
 require 'rails_helper'
-require 'spec_helper'
-
-
 RSpec.feature "post", :type => :feature do
   scenario "Create a new post" do
     visit "/posts/new"

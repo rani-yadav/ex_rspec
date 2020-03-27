@@ -1,6 +1,4 @@
 require 'rails_helper'
-require 'spec_helper'
-
 RSpec.feature "post", :type => :feature do
     let!(:post) { create :post, title: 'show the post' }
     scenario "show post" do

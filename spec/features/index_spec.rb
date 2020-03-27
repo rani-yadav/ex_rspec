@@ -1,6 +1,4 @@
 require 'rails_helper'
-require 'spec_helper'
-
 RSpec.feature "post", :type => :feature do
 	describe 'index posts' do
 		let!(:post1) { create :post, title: 'first' }
