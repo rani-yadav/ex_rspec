@@ -6,6 +6,7 @@ RSpec.feature "post", :type => :feature do
     fill_in "Title", :with => "ruby"
     fill_in "Body", :with => "ruby on rails"
     click_button "Create Post"
-   expect(build(:post)).to be_valid
+    expect(page).to have_content('ruby')
+    expect(page).to have_content('ruby on rails')
   end
 end
